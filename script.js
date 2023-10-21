@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // You can add more specific logic here to handle the search term if needed
 
         // Redirect to map.html
-        window.location.href = "secondPage.html";
+        window.location.href = "map.html";
     });
 
     function displaySuggestions(suggestions) {
