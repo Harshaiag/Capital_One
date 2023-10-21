@@ -1,0 +1,55 @@
+body {
+    background-color: #1e1e1e;
+    /* Dark background color */
+    color: #fff;
+    /* Text color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #8ef568;
+    /* Header text color */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #333;
+    /* Table background color */
+}
+
+th,
+td {
+    border: 1px solid #444;
+    /* Table cell border */
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #111;
+    /* Header background color */
+    color: #ffcc00;
+    /* Header text color */
+}
+
+tr:nth-child(even) {
+    background-color: #222;
+    /* Even row background color */
+}
+
+/* Add additional styles for odd rows or specific cells if needed */
+
+/* Links color */
+a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff9900;
+}
