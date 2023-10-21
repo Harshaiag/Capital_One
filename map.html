@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Map</title>
+    <title>UK City Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
         body {
@@ -18,22 +18,22 @@
     <div id="map"></div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
-        const map = L.map('map').setView([54.7023545, -3.2765753], 6); 
+        const map = L.map('map').setView([54.7023545, -3.2765753], 6); // Center the map on the UK
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
         }).addTo(map);
 
-        
+        // Define city coordinates and links
         const cities = [
-            { name: "London", coords: [51.5074, -0.1278], href: },
-            { name: "Manchester", coords: [53.4839, -2.2446], href:  },
-            { name: "Birmingham", coords: [52.4862, -1.8904], href:  },
-            { name: "Nottingham", coords: [52.9548, -1.1581], link: },
-            { name: "Leicester", coords: [52.6369, -1.1398], link:  }
-            
+            { name: "London", coords: [51.5074, -0.1278], link: "https://www.visitlondon.com/" },
+            { name: "Manchester", coords: [53.4839, -2.2446], link: "https://www.visitmanchester.com/" },
+            { name: "Birmingham", coords: [52.4862, -1.8904], link: "https://visitbirmingham.com/" },
+            { name: "Nottingham", coords: [52.9548, -1.1581], link: "https://www.visit-nottinghamshire.co.uk/" },
+            { name: "Leicester", coords: [52.6369, -1.1398], link: "https://www.visitleicester.info/" }
+            // Add more cities with coordinates and links
         ];
 
-   
+        // Initialize markers with popups and hyperlinks
         cities.forEach(city => {
             const marker = L.marker(city.coords).addTo(map);
             marker.bindPopup(`<a href="${city.link}" target="_blank">${city.name}</a>`);
