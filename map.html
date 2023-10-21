@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([54.7023545, -3.2765753], 6); 
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        
+        const cities = [
+            { name: "London", coords: [51.5074, -0.1278], href: },
+            { name: "Manchester", coords: [53.4839, -2.2446], href:  },
+            { name: "Birmingham", coords: [52.4862, -1.8904], href:  },
+            { name: "Nottingham", coords: [52.9548, -1.1581], link: },
+            { name: "Leicester", coords: [52.6369, -1.1398], link:  }
+            
+        ];
+
+   
+        cities.forEach(city => {
+            const marker = L.marker(city.coords).addTo(map);
+            marker.bindPopup(`<a href="${city.link}" target="_blank">${city.name}</a>`);
+        });
+    </script>
+</body>
+</html>
